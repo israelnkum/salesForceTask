@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/ec-custom.css">
+    <title>JavaScript/jQuery-based Ecommerce Application.</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-white text-uppercase">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">E-Commerce</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link"  href="#">Gift
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">New</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Boys</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Girls</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">More Sizes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Ties</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">More</a></li>
+            </ul>
+            <span>
+            <i class="fa fa-search"></i>
+                <a href="javascript:void(0)" id="cart-icon"><i class="fa fa-shopping-cart"></i>
+                    <span class="cart-qty"></span></a>
+        </span>
+        </div>
+    </div>
+</nav>
+<div id="mySidebar" class="sidebar shadow-sm">
+    <div class="container">
+        <div class="row text-white text-center sidebar-header ">
+            <div class="col-md-10">
+                <h6 class="sidebar-title mt-2">Item added to cart</h6>
+            </div>
+            <div class="col-md-2 bg-dark  close-sidebar text-center">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+        <div class="form-row mt-2">
+            <div class="col-md-6">
+                <img id="" class="img-fluid" src="asset/img/sweats/sweat_1.jpg" alt="Sweats">
+            </div>
+            <div class="col-md-6">
+                <h6 class="sidebar-product-title">Boy's Stillwater Sherpa 1/4-Zip</h6>
+                <h6 class="sidebar-product-title">$98.50</h6>
+                <input type="hidden" value="1" name="item_id" id="item_id">
+            </div>
+            <div class="col-md-12 mt-3 table-responsive">
+                <table class="table table-sm small">
+                    <tr class="text-uppercase">
+                        <td>Size</td>
+                        <td class="text-right" id="lastItemSize">-</td>
+                    </tr>
+                    <tr class="text-uppercase">
+                        <td>Color</td>
+                        <td class="text-right text-capitalize" id="lastItemColor">-</td>
+                    </tr>
+                    <tr class="text-uppercase">
+                        <td>Qty</td>
+                        <td class="text-right" id="lastItemQty">-</td>
+                    </tr>
+                    <tr class="text-uppercase btn-primary">
+                        <td>Cart Subtotal</td>
+                        <td class="text-right" >$<span class="subTotal"></span></td>
+                    </tr>
+                    <tr>
+                        <td class=""><span class="text-muted">You qualify for</span> <span
+                                class="text-uppercase free-shipping">free shipping</span></td>
+                        <td class="text-right"><i class="fa fa-check-circle free-shipping"></i></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <a href="cart.html" class="btn btn-outline-primary btn-block text-uppercase" id="btn-view-cart">View Cart &
+                    Checkout</a>
+                <button class="btn btn-primary btn-block text-uppercase" id="btn-continue-shopping">Continue
+                    shopping</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-md-12 mt-3 p-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="#">Home <i class="fa fa-angle-right"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Boys <i class="fa fa-angle-right"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Clothing <i class="fa fa-angle-right"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Sweatshirts, Shep Shirt & Fleece <i class="fa fa-angle-right"></i></a></li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <img class="thumbnail active-image" src="asset/img/sweats/sweat_1.jpg" alt="sweat_1">
+                    <img class="thumbnail" src="asset/img/sweats/sweat_2.jpg" alt="sweat_2">
+                    <img class="thumbnail" src="asset/img/sweats/sweat_3.jpg" alt="sweat_3">
+                </div>
+                <div class="col-md-6 ">
+                    <img id="featured-img" class="img-fluid" src="asset/img/sweats/sweat_1.jpg" alt="Sweats">
+                </div>
+                <div class="col-md-4">
+                    <h4 class="product-name" id="product-name">Boy's Stillwater Sherpa 1/4-Zip</h4>
+                    <h6 class="sub-title"><span class="text-danger">FREE GROUND SHIPPING</span><span
+                            class="text-muted"> ON ALL ORDERS
+                        OVER $125</span></h6>
+                    <div class="row col-md-12 mt-3 mb-3">
+                        <span class="colors" style="background: #d9b792"><i class="d-none">Camel</i></span>
+                        <span class="colors" style="background: #7caacc"><i class="d-none">Light Blue</i></span>
+                        <span class="colors" style="background: #2d3c53"><i class="d-none">Colbat Blue</i></span>
+                    </div>
+                    <p class="color-error">Color: <span id="chosen-color" class="chosen-color"></span></p>
+                    <h6 class="product-name mt-2 mb-2">$<span id="product-price">98.50</span></h6>
+                    <div class="row col-md-12 mt-4">
+                        <span class="sizes">2T</span>
+                        <span class="sizes">3T</span>
+                        <span class="sizes">4T</span>
+                        <span class="sizes">1</span>
+                        <span class="sizes">2</span>
+                        <span class="sizes">3</span>
+                    </div>
+                    <span id="chosen-size"></span>
+                    <div class="form-row mt-3">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="decrease-qty">-</span>
+                                </div>
+                                <input type="text" class="form-control" id="qty" value="1">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text border-left-0" id="increase-qty">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8">
+                            <button class="btn btn-primary btn-block" id="btn-add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid detail-section">
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-8">
+                <h6  class="detail-title">DETAILS</h6>
+                <h6 class="detail-sub-title">Style 3K001154</h6>
+                <p>
+                    Our Sherpa Fleece features a stretch fabric that’s brushed on both sides for optimal warmth without added weight. From the backyard to the playground, class to recess, this'll keep your little guy cozy, warm and looking sharp.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h6  class="detail-title">Fabric</h6>
+                <p>100% polyester</p>
+                <h6 class="detail-title">Features</h6>
+                <ul>
+                    <li>Soft, lightweight Sherpa fleece</li>
+                    <li>Stretch for comfort and mobility</li>
+                    <li>Moisture-wicking and quick-drying</li>
+                    <li>Color blocked detailing</li>
+                    <li>Logo box on the chest</li>
+                    <li>Imported</li>
+                </ul>
+            </div>
+            <div class="col-md-12 text-center mt-5 mb-4 text-uppercase">
+                <h4>What we (and you) love</h4>
+            </div>
+        </div>
+        <div class="form-row mb-5">
+            <div class="col-md-2">
+                <img src="asset/img/img1.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img3.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img4.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img5.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img6.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ec-custom.js"></script>
+<script>
+    if ($('#chosen-size').text() === '' || $('.chosen-color').text() === 'Choose a color') {
+        $('#btn-add-to-cart').attr('disabled','disabled');
+    }else{
+        $('#btn-add-to-cart').removeAttr('disabled');
+    }
+</script>
+</body>
+</html>

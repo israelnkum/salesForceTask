@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/ec-custom.css">
+    <title>JavaScript/jQuery-based Ecommerce Application.</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-white text-uppercase">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">E-Commerce</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link"  href="#">Gift
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">New</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Boys</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Girls</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">More Sizes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Ties</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">More</a></li>
+            </ul>
+            <span>
+            <i class="fa fa-search"></i>
+                <a href="javascript:void(0)" id="cart-icon"><i class="fa fa-shopping-cart"></i>
+                    <span class="cart-qty"></span></a>
+        </span>
+        </div>
+    </div>
+</nav>
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-md-12 mt-3 p-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="#">Home <i class="fa fa-angle-right"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Cart <i class="fa fa-angle-right"></i></a></li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4">
+                            Items in cart: <span class="cart-qty"></span>
+                        </div>
+                        <div class="col-md-8 text-right">
+                            <span class="text-muted">You qualify for</span> <span
+                                class="text-uppercase free-shipping">free shipping</span>
+                        </div>
+                        <div class="col-md-12 table-responsive">
+                            <table class="table" id="cart-table">
+                                <thead >
+                                <tr>
+                                    <th>Image</th>
+                                    <th>item</th>
+                                    <th>qty</th>
+                                    <th>unit price</th>
+                                    <!--<th>Delivery/pickup</th>-->
+                                    <th>Total price</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header">
+                            <h6 class="card-title">Order Summary</h6>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td class="">$<span class="subTotal"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Sales Tax</td>
+                                    <td>00.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>$<span class="subTotal"></span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-row mt-3">
+                                <div class="col-md-12 mb-2">
+                                    <label for="coupon" class="small text-focus mb-0">Apply Coupon Code</label>
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" id="coupon" >
+                                        <div class="input-group-prepend">
+                                            <button
+                                                    class="input-group-text text-uppercase border-left-0 btn btn-outline-primary btn-apply-coupon">
+                                                Apply</button>
+                                        </div>
+                                    </div>
+                                    <small class="text-danger" id="coupon-error"></small>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary btn-block" id="btn-check-out">Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid detail-section p-5">
+    <div class="container mt-5">
+        <div class="col-md-12 text-center mt-5 mb-4 text-uppercase">
+            <h4>What we (and you) love</h4>
+        </div>
+        <div class="form-row mb-5">
+            <div class="col-md-2">
+                <img src="asset/img/img1.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img3.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img4.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img5.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-2">
+                <img src="asset/img/img6.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ec-custom.js"></script>
+<script>
+    $('#btn-check-out').click(function () {
+        alert('Checkout Successful')
+        localStorage.clear();
+        window.location= "index.html";
+    });
+</script>
+</body>
+</html>
