@@ -162,9 +162,21 @@
 <script src="js/ec-custom.js"></script>
 <script>
     $('#btn-check-out').click(function () {
-        alert('Checkout Successful')
-        localStorage.clear();
-        window.location= "index.html";
+        if ($('#coupon').val() !== ''){
+            if (checkCouponValidity() === true){
+                deactivateElement();
+                alert('Checkout Successful')
+                localStorage.clear();
+                window.location= "index.html";
+            }else{
+                $('#coupon-error').text('Enter a valid coupon');
+            }
+        }else{
+            alert('Checkout Successful')
+            localStorage.clear();
+            window.location= "index.html";
+        }
+
     });
 </script>
 </body>

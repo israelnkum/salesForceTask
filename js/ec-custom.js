@@ -155,12 +155,7 @@ $(document).ready(function () {
                 mult += total;
             });
             $('.subTotal').text(Number(mult).toFixed(2));
-            $('#coupon-error').text('');
-            $('.btn-apply-coupon').attr('disabled','disabled');
-            $('#coupon').attr('disabled','disabled');
-            $('.qtyChanged').attr('disabled','disabled');
-            $('.addQty').fadeOut(1000).slideUp(1000);
-            $('.deductQty').fadeOut(1000).slideUp(1000);
+            deactivateElement();
         }else{
             $('#coupon-error').text('Enter a valid coupon');
         }
@@ -275,3 +270,11 @@ function checkCouponValidity() {
     return !(coupon.length < 5 || coupon.length > 5);
 }
 
+function deactivateElement() {
+    $('#coupon-error').text('');
+    $('.btn-apply-coupon').attr('disabled','disabled');
+    $('#coupon').attr('disabled','disabled');
+    $('.qtyChanged').attr('disabled','disabled');
+    $('.addQty').fadeOut(1000).slideUp(1000);
+    $('.deductQty').fadeOut(1000).slideUp(1000);
+}
